@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusting Social AI Philippines - Employee Management Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand-section">
+                <h4 class="brand-title">Trusting<br>Social AI<br>Philippines</h4>
+                <div class="admin-profile">
+                    <img src="lunod.jpg" alt="Admin" class="admin-avatar-img">
+                    <h6 class="admin-name">Admin</h6>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link active" href="#" data-page="dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-page="employees"><i class="bi bi-people"></i> Employee</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-page="tickets"><i class="bi bi-ticket"></i> Tickets</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-page="progress"><i class="bi bi-graph-up"></i> Progress Tracking</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-page="notifications"><i class="bi bi-bell"></i> Notifications</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+<li class="nav-item">
+  <a class="nav-link" href="login.php">
+    <i class="bi bi-box-arrow-right"></i> Logout
+  </a>
+</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="top-header d-flex align-items-center">
+            <button class="btn btn-link d-lg-none" id="sidebarToggle">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="header-actions ms-auto d-flex align-items-center">
+                <button class="btn btn-link me-3">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                        <img src="lunod.jpg" alt="Admin" class="rounded-circle me-2" width="32" height="32">
+                        Admin
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="login.php">Logout</a></li>
+                </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <main class="page-content" id="pageContent">
+            <div class="fade-in">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="h3 fw-bold text-dark mb-1">Dashboard</h2>
+                        <p class="text-muted mb-0">Hello Admin, <strong>Good Morning</strong></p>
+                    </div>
+                </div>
+
+                <!-- Metrics Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-4">
+                        <div class="metric-card p-4">
+                            <div class="metric-icon bg-blue"><i class="bi bi-people"></i></div>
+                            <p class="text-muted mb-1 small">Total Employees:</p>
+                            <h3 class="fw-bold mb-0">5/40</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="metric-card p-4">
+                            <div class="metric-icon bg-green"><i class="bi bi-check-circle"></i></div>
+                            <p class="text-muted mb-1 small">Attendance Rate</p>
+                            <h3 class="fw-bold mb-0">100%</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="metric-card p-4">
+                            <div class="metric-icon bg-orange"><i class="bi bi-calendar"></i></div>
+                            <p class="text-muted mb-1 small">On Leave</p>
+                            <h3 class="fw-bold mb-0">0/40</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Recent Tickets -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0 fw-semibold">Recent Tickets</h5>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-eye me-1"></i> View All
+                                </button>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="p-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1 fw-medium">#1 - Lost ID or access card</h6>
+                                            <p class="text-muted small mb-0">Alek Almene</p>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <span class="status-badge status-open">open</span>
+                                            <span class="priority-badge priority-high">High</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1 fw-medium">#2 - System Access Issue</h6>
+                                            <p class="text-muted small mb-0">Raven Gepulani</p>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <span class="status-badge status-in-progress">in progress</span>
+                                            <span class="priority-badge priority-medium">Medium</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1 fw-medium">#3 - Leave Request</h6>
+                                            <p class="text-muted small mb-0">Troy Basangan</p>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <span class="status-badge status-on-hold">on hold</span>
+                                            <span class="priority-badge priority-high">High</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create Announcement -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="mb-0 fw-semibold">Create Announcement</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="announcementForm">
+                                    <div class="mb-3">
+                                        <label for="announcementTitle" class="form-label small fw-medium">Title</label>
+                                        <input type="text" class="form-control" id="announcementTitle" placeholder="Enter announcement title">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="announcementMessage" class="form-label small fw-medium">Message</label>
+                                        <textarea class="form-control" id="announcementMessage" rows="4" placeholder="Enter announcement message"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="emailNotification">
+                                            <label class="form-check-label small" for="emailNotification">Email Notification</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="smsNotification">
+                                            <label class="form-check-label small" for="smsNotification">SMS Notification</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Send Announcement</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="mt-5">
+                    <h5 class="fw-semibold mb-3">Quick Actions</h5>
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <a href="#" class="quick-action-card bg-green text-decoration-none" onclick="loadPage('logout2')">
+                                <i class="bi bi-person-plus"></i>
+                                <h6 class="fw-semibold mb-0">Add Employee</h6>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="#" class="quick-action-card text-decoration-none">
+                                <i class="bi bi-robot"></i>
+                                <h6 class="fw-semibold mb-0">AI Assistant</h6>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="#" class="quick-action-card bg-orange text-decoration-none" onclick="loadPage('progress')">
+                                <i class="bi bi-graph-up"></i>
+                                <h6 class="fw-semibold mb-0">View Progress</h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay d-lg-none" id="sidebarOverlay"></div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script2.js"></script>
+
+    
+</body>
+</html>
