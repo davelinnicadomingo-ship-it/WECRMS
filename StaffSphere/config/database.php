@@ -4,7 +4,8 @@ class Database {
     private $connection;
     
     public function __construct() {
-        $database_url = getenv('DATABASE_URL');
+        // ✅ Database URL without password + correct database name
+        $database_url = "mysql://root:@127.0.0.1:3306/ticketingsystem";
         
         if (!$database_url) {
             die("DATABASE_URL environment variable is not set");
@@ -13,17 +14,18 @@ class Database {
         $url_parts = parse_url($database_url);
         
         $host = $url_parts['host'] ?? 'localhost';
-        $port = $url_parts['port'] ?? 5432;
-        $dbname = ltrim($url_parts['path'] ?? '/postgres', '/');
-        $user = $url_parts['user'] ?? 'postgres';
-        $password = $url_parts['pass'] ?? '';
+        $port = $url_parts['port'] ?? 3306;
+        $dbname = ltrim($url_parts['path'] ?? 'ticketingsystem', '/');
+        $user = $url_parts['user'] ?? 'root';
+        $password = ""; // ✅ removed password
         
         $query_params = [];
         if (isset($url_parts['query'])) {
             parse_str($url_parts['query'], $query_params);
         }
         
-        $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+        // 👇 MySQL DSN
+        $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
         
         if (isset($query_params['sslmode']) && $query_params['sslmode'] === 'require') {
             $dsn .= ";sslmode=require";
